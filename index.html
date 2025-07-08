@@ -1,0 +1,676 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000000;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+    
+    .gradient-bg {
+        background: linear-gradient(135deg, #4b5563 0%, #000000 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+    
+    .container {
+        max-width: 64rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .countdown-timer {
+        background: linear-gradient(45deg, #6b7280, #4b5563);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from { box-shadow: 0 0 20px #6b7280; }
+        to { box-shadow: 0 0 30px #6b7280, 0 0 40px #6b7280; }
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    @media (min-width: 768px) {
+        .main-title {
+            font-size: 3.75rem;
+        }
+    }
+    
+    .highlight {
+        color: #d1d5db;
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: #e5e7eb;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @media (min-width: 768px) {
+        .subtitle {
+            font-size: 1.5rem;
+        }
+    }
+    
+    .book-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .book-frame {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1.5rem;
+    }
+    
+    .book-image {
+        width: 16rem;
+        height: 20rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (min-width: 768px) {
+        .book-image {
+            width: 18rem;
+            height: 24rem;
+        }
+    }
+    
+    .cta-button {
+        background-color: #eab308;
+        color: #000000;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        border-radius: 9999px;
+        font-size: 1.25rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+    }
+    
+    .cta-button:hover {
+        background-color: #ca8a04;
+        transform: scale(1.05);
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    .section {
+        padding: 4rem 1rem;
+    }
+    
+    .section-gray {
+        background-color: #111827;
+    }
+    
+    .section-white {
+        background-color: white;
+        color: #000000;
+    }
+    
+    .section-black {
+        background-color: #000000;
+    }
+    
+    .section-title {
+        font-size: 1.875rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #d1d5db;
+    }
+    
+    @media (min-width: 768px) {
+        .section-title {
+            font-size: 2.25rem;
+        }
+    }
+    
+    .section-white .section-title {
+        color: #374151;
+    }
+    
+    .grid {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    .card {
+        background-color: #000000;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 2px solid #4b5563;
+    }
+    
+    .card-feature {
+        background-color: #111827;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid #6b7280;
+    }
+    
+    .card-testimonial {
+        background-color: #000000;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+    }
+    
+    .emoji {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+        color: #d1d5db;
+    }
+    
+    .card-text {
+        color: #9ca3af;
+    }
+    
+    .stars {
+        color: #fbbf24;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .testimonial-text {
+        color: #d1d5db;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+        color: #d1d5db;
+        font-weight: bold;
+    }
+    
+    .transformation-box {
+        background-color: #f3f4f6;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .transformation-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+        .transformation-grid {
+            flex-direction: row;
+        }
+    }
+    
+    .before-after {
+        text-align: center;
+    }
+    
+    .before-after-label {
+        font-size: 2.25rem;
+        font-weight: 900;
+        color: #4b5563;
+        margin-bottom: 0.5rem;
+    }
+    
+    .before-after-amount {
+        font-size: 1.875rem;
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .after .before-after-amount {
+        color: #059669;
+    }
+    
+    .arrow {
+        font-size: 3.75rem;
+        color: #4b5563;
+    }
+    
+    .price-box {
+        background-color: white;
+        color: #000000;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        max-width: 28rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .old-price {
+        color: #6b7280;
+        text-decoration: line-through;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .new-price {
+        color: #eab308;
+        font-size: 2.25rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+    }
+    
+    .savings {
+        color: #059669;
+        font-weight: bold;
+        font-size: 1.125rem;
+    }
+    
+    .countdown-display {
+        font-size: 1.875rem;
+        font-weight: 900;
+        margin-top: 0.5rem;
+    }
+    
+    .features-list {
+        font-size: 0.875rem;
+        color: #d1d5db;
+        margin-bottom: 2rem;
+    }
+    
+    .follow-section {
+        border-top: 1px solid #4b5563;
+        padding-top: 2rem;
+    }
+    
+    .follow-button {
+        background-color: white;
+        color: #000000;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    
+    .follow-button:hover {
+        background-color: #e5e7eb;
+    }
+    
+    .footer {
+        background-color: #000000;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    
+    .footer-text {
+        color: #6b7280;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-large {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: #e5e7eb;
+    }
+    
+    .text-xl {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section-white .text-xl {
+        color: #374151;
+        max-width: 48rem;
+    }
+    
+    .button-secondary {
+        background-color: #eab308;
+        color: #000000;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        font-size: 1.125rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .button-secondary:hover {
+        background-color: #ca8a04;
+    }
+    
+    .big-cta {
+        background-color: #eab308;
+        color: #000000;
+        font-weight: bold;
+        padding: 1.5rem 3rem;
+        border-radius: 9999px;
+        font-size: 1.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+    
+    .big-cta:hover {
+        background-color: #ca8a04;
+        transform: scale(1.05);
+    }
+</style>
+        <h1 class="main-title">
+            From <span class="highlight">$900K to $2.4M</span><br>
+            in Just 12 Months
+        </h1>
+        
+        <p class="subtitle">
+            The exact strategies that transformed my sales career in the hardscape industry - 
+            <strong>now available for ANY sales professional</strong>
+        </p>
+        
+        <!-- Book Cover Photo and CTA -->
+        <div class="book-container">
+            <div class="book-frame">
+                <img src="https://i.imgur.com/2cTdj0B.jpeg" alt="Superior Sales Book Cover" class="book-image">
+            </div>
+            
+            <button onclick="scrollToOffer()" class="cta-button">
+                GET YOUR COPY NOW - $9.99
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Pain Points Section -->
+<div class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">
+            Are You Struggling With These Sales Challenges?
+        </h2>
+        
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="emoji">😰</div>
+                <h3 class="card-title">Struggling to Close Deals?</h3>
+                <p class="card-text">You know your product inside out, but when it comes to sealing the deal, prospects slip away at the last moment.</p>
+            </div>
+            
+            <div class="card">
+                <div class="emoji">🤝</div>
+                <h3 class="card-title">Can't Connect with Clients?</h3>
+                <p class="card-text">Building rapport feels forced and unnatural. You struggle to relate to prospects and earn their trust.</p>
+            </div>
+            
+            <div class="card">
+                <div class="emoji">😔</div>
+                <h3 class="card-title">Feeling Like Something's Wrong?</h3>
+                <p class="card-text">You question your abilities and lack confidence when approaching leads, especially in their homes.</p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <p class="text-large">
+                <strong>You're not alone.</strong> I felt exactly the same way before discovering these game-changing strategies.
+            </p>
+            <button onclick="scrollToOffer()" class="button-secondary">
+                Show Me The Solution →
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Transformation Story -->
+<div class="section section-white">
+    <div class="container">
+        <h2 class="section-title">
+            My Incredible Transformation Story
+        </h2>
+        
+        <div class="transformation-box">
+            <div class="transformation-grid">
+                <div class="before-after">
+                    <div class="before-after-label">BEFORE</div>
+                    <div class="before-after-amount">$900K</div>
+                    <p style="color: #4b5563;">Annual Sales</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="before-after after">
+                    <div class="before-after-label">AFTER</div>
+                    <div class="before-after-amount">$2.4M</div>
+                    <p style="color: #4b5563;">Annual Sales</p>
+                </div>
+            </div>
+            <p style="font-size: 1.125rem; color: #374151;">
+                <strong>In just 12 months</strong>, I went from struggling with the same challenges you face today 
+                to becoming a top performer in the competitive hardscape industry.
+            </p>
+        </div>
+        
+        <p class="text-xl">
+            The strategies in "Superior Sales" aren't theory - they're battle-tested methods that 
+            <strong>actually work in real-world sales situations</strong>. Whether you're selling in-home services, 
+            products, or anything else, these principles will transform your results.
+        </p>
+        
+        <button onclick="scrollToOffer()" class="cta-button">
+            I Want These Results Too!
+        </button>
+    </div>
+</div>
+
+<!-- What You'll Learn -->
+<div class="section section-black">
+    <div class="container">
+        <h2 class="section-title">
+            What You'll Discover Inside "Superior Sales"
+        </h2>
+        
+        <div class="grid grid-2">
+            <div class="card-feature">
+                <h3 class="card-title">✅ Confidence-Building Techniques</h3>
+                <p class="card-text">Walk into any home or meeting with unshakeable confidence that commands respect</p>
+            </div>
+            
+            <div class="card-feature">
+                <h3 class="card-title">✅ Instant Rapport Builders</h3>
+                <p class="card-text">Connect with any prospect within minutes using proven psychological triggers</p>
+            </div>
+            
+            <div class="card-feature">
+                <h3 class="card-title">✅ Closing Secrets</h3>
+                <p class="card-text">The exact words and techniques that turn "maybe" into "yes" every time</p>
+            </div>
+            
+            <div class="card-feature">
+                <h3 class="card-title">✅ Objection Handling Mastery</h3>
+                <p class="card-text">Turn every objection into an opportunity to strengthen your position</p>
+            </div>
+            
+            <div class="card-feature">
+                <h3 class="card-title">✅ In-Home Sales Strategies</h3>
+                <p class="card-text">Specialized techniques for selling in the prospect's personal space</p>
+            </div>
+            
+            <div class="card-feature">
+                <h3 class="card-title">✅ Mindset Transformation</h3>
+                <p class="card-text">Eliminate self-doubt and develop the winner's mentality of top performers</p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <button onclick="scrollToOffer()" class="cta-button">
+                Get Instant Access Now!
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Social Proof -->
+<div class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">
+            Join Thousands of Sales Professionals Getting Results
+        </h2>
+        
+        <div class="grid grid-3">
+            <div class="card-testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"These strategies completely changed my approach to sales. My closing rate doubled in just 3 months!"</p>
+                <p class="testimonial-author">- Sarah M., Real Estate</p>
+            </div>
+            
+            <div class="card-testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Finally, a sales book that actually works! The confidence techniques alone were worth 10x the price."</p>
+                <p class="testimonial-author">- Mike T., Insurance</p>
+            </div>
+            
+            <div class="card-testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I went from struggling to hit quota to being the top performer in my company. This book is gold!"</p>
+                <p class="testimonial-author">- Jennifer L., Solar Sales</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Final Offer Section -->
+<div id="offer" class="gradient-bg">
+    <div class="container">
+        <!-- Countdown Timer -->
+        <div class="countdown-timer">
+            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⏰ LIMITED TIME OFFER</div>
+            <div style="font-size: 1.125rem;">This special price expires in:</div>
+            <div id="countdown" class="countdown-display">47:59:59</div>
+        </div>
+        
+        <h2 style="font-size: 2.25rem; font-weight: 900; margin-bottom: 1.5rem;">
+            Get "Superior Sales" Today
+        </h2>
+        
+        <div class="price-box">
+            <div class="old-price">Regular Price: $29.99</div>
+            <div class="new-price">Special Price: $9.99</div>
+            <div class="savings">You Save $20.00!</div>
+        </div>
+        
+        <p class="text-xl">
+            Don't let another day pass struggling with the same sales challenges. 
+            <strong>Transform your career starting today!</strong>
+        </p>
+        
+        <a href="https://www.amazon.com/dp/B0FGVW6F1D" target="_blank" class="big-cta">
+            🛒 BUY NOW ON AMAZON - $9.99
+        </a>
+        
+        <div class="features-list">
+            ✅ Instant Digital Download<br>
+            ✅ Compatible with all devices
+        </div>
+        
+        <!-- Follow CTA -->
+        <div class="follow-section">
+            <p style="font-size: 1.125rem; margin-bottom: 1rem;">Want more sales tips and strategies?</p>
+            <a href="https://www.threads.com/@superior_sales_coaching?xmt=AQF0UctejtKl817_FvBrxX3BDr7lQkgyYMgvwN8iMbNQnD8" target="_blank" class="follow-button">
+                📱 Follow for More Sales Secrets
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p class="footer-text">© 2024 Superior Sales. Transform your sales career today.</p>
+</div>
+
+<script>
+    // Countdown Timer
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const endTime = now + (48 * 60 * 60 * 1000); // 48 hours from now
+        
+        setInterval(function() {
+            const currentTime = new Date().getTime();
+            const timeLeft = endTime - currentTime;
+            
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(minutes).padStart(2, '0') + ':' + 
+                String(seconds).padStart(2, '0');
+            
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = "OFFER EXPIRED";
+            }
+        }, 1000);
+    }
+    
+    // Smooth scroll to offer
+    function scrollToOffer() {
+        document.getElementById('offer').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+    
+    // Initialize countdown on page load
+    updateCountdown();
+</script>
